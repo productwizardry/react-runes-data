@@ -1,18 +1,30 @@
+import axios from 'axios';
 import firebase from 'firebase';
 
-const apiKey = '';
-const messagingSenderId = '';
-const projectId = '';
+const configurationUrl = 'https://merlinpatt.com/slides/react/scripts/configurationData.json';
 
-const config = {
-  apiKey,
-  messagingSenderId,
-  projectId,
-  authDomain: `${projectId}.firebaseapp.com`,
-  databaseURL: `https://${projectId}.firebaseio.com`,
-  storageBucket: `${projectId}.appspot.com`,
-};
+let initialized = false;
 
-firebase.initializeApp(config);
+const wrappedFirebase = async () => {
+  const response = await axios.get(configurationUrl);
 
-export default firebase;
+  const {apiKey, messagingSenderId, projectId} = response.data;
+
+  const config = {
+    apiKey,
+    messagingSenderId,
+    projectId,
+    authDomain: `${projectId}.firebaseapp.com`,
+    databaseURL: `https://${projectId}.firebaseio.com`,
+    storageBucket: `${projectId}.appspot.com`,
+  };
+
+  if (! initialized) {
+    initialized = true;
+    firebase.initializeApp(config);
+  }
+
+  return firebase;
+}
+
+export default wrappedFirebase;

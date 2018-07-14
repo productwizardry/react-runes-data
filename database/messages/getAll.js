@@ -1,7 +1,7 @@
 import databaseReference from './databaseReference';
 
-const getAll = (room, callback) => {
-  databaseReference(room).once('value', snapshots => {
+const getAll = async (room, callback) => {
+  (await databaseReference(room)).once('value', snapshots => {
     const messages = [];
     snapshots.forEach(snapshot => {
       const message = snapshot.val();
