@@ -1,5 +1,5 @@
 {
-  "name": "react-runes-data",
+  "name": "@productwizardry/react-runes-data",
   "version": "1.0.0",
   "description": "A simplified container and data functionality for a React class",
   "main": "index.js",
