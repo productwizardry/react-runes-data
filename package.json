@@ -1,0 +1,30 @@
+{
+  "name": "react-runes-data",
+  "version": "1.0.0",
+  "description": "A simplified container and data functionality for a React class",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/productwizardry/react-runes-data.git"
+  },
+  "keywords": [
+    "react",
+    "container",
+    "data"
+  ],
+  "author": "Merlin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/productwizardry/react-runes-data/issues"
+  },
+  "homepage": "https://github.com/productwizardry/react-runes-data#readme",
+  "dependencies": {
+    "firebase": "^5.2.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  }
+}
